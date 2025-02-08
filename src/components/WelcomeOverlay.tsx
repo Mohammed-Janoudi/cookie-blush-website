@@ -17,7 +17,7 @@ export const WelcomeOverlay = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-nude-50/90 backdrop-blur-sm">
       <h1 className="animate-welcome text-4xl md:text-6xl font-light tracking-wider text-nude-300">
-        Cookies By Damdoom
+        Artisan Cookies
       </h1>
     </div>
   );

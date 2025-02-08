@@ -1,6 +1,7 @@
 
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
+
 const products = [
   {
     id: 1,
@@ -19,7 +20,7 @@ const products = [
   {
     id: 3,
     name: "Matcha Green Tea",
-    description: "Cookies with authentic matcha",
+    description: "Japanese-inspired cookies with authentic matcha",
     price: "5.50",
     image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&q=80",
   },
@@ -34,6 +35,7 @@ const products = [
 
 export const FeaturedProducts = () => {
   const { addToCart } = useCart();
+
   const handleAddToCart = (product: typeof products[0]) => {
     addToCart({
       id: product.id,
@@ -42,6 +44,7 @@ export const FeaturedProducts = () => {
     });
     toast.success(`Added ${product.name} to cart`);
   };
+
   return (
     <section id="products" className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -61,10 +64,11 @@ export const FeaturedProducts = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="aspect-square rounded-2xl bg-nude-50 mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-nude-100/50 group-hover:bg-nude-100/70 transition-colors">
-                  {/* Placeholder for product image */}
-                  <div className="w-3/4 h-3/4 rounded-full bg-nude-200/20"></div>
-                </div>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
               </div>
               <h3 className="text-lg font-medium text-nude-300">{product.name}</h3>
               <p className="mt-1 text-nude-300/70 text-sm">{product.description}</p>
@@ -73,8 +77,6 @@ export const FeaturedProducts = () => {
                 onClick={() => handleAddToCart(product)}
                 className="mt-4 w-full px-4 py-2 bg-nude-200 text-white rounded-full hover:bg-nude-200/90 transition-colors"
               >
-              
-              
                 Add to Cart
               </button>
             </div>

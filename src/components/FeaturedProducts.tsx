@@ -8,24 +8,28 @@ const products = [
     name: "Classic Chocolate Chip",
     description: "Rich, buttery, and filled with premium chocolate",
     price: "4.50",
+    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80",
   },
   {
     id: 2,
     name: "Lavender Shortbread",
     description: "Delicate butter cookies with a hint of lavender",
     price: "5.00",
+    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80",
   },
   {
     id: 3,
     name: "Matcha Green Tea",
     description: "Japanese-inspired cookies with authentic matcha",
     price: "5.50",
+    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&q=80",
   },
   {
     id: 4,
     name: "Salted Caramel",
     description: "Sweet and salty perfection in every bite",
     price: "5.00",
+    image: "https://images.unsplash.com/photo-1618923850107-d1a234d7a079?auto=format&fit=crop&q=80",
   },
 ];
 
@@ -60,9 +64,11 @@ export const FeaturedProducts = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="aspect-square rounded-2xl bg-nude-50 mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-nude-100/50 group-hover:bg-nude-100/70 transition-colors">
-                  <div className="w-3/4 h-3/4 rounded-full bg-nude-200/20"></div>
-                </div>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
               </div>
               <h3 className="text-lg font-medium text-nude-300">{product.name}</h3>
               <p className="mt-1 text-nude-300/70 text-sm">{product.description}</p>

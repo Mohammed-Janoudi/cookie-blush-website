@@ -1,5 +1,6 @@
 {
   "name": "vite_react_shadcn_ts",
+  "homepage": "https://mohammed-janoudi.github.io/cookie-blush-website/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -80,4 +81,5 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
   }
+  
 }

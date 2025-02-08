@@ -29,7 +29,7 @@ const products = [
     name: "Salted Caramel",
     description: "Sweet and salty perfection in every bite",
     price: "5.00",
-    image: "https://images.unsplash.com/photo-1618923850107-d1a234d7a079?auto=format&fit=crop&q=80",
+    image: "/julissa-capdevilla-tDoHiqXl9b8-unsplash.jpg",
   },
 ];
 

@@ -1,4 +1,3 @@
-
 import { ShoppingBag } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { 
@@ -8,6 +7,9 @@ import {
 } from "@/components/ui/drawer";
 import { Cart } from "./Cart";
 
+// ✅ Use the correct public path
+const logoPath = "/1b704c3d-0db6-496c-a4ca-551a39374261.png";
+
 export const NavBar = () => {
   const { items } = useCart();
 
@@ -15,9 +17,12 @@ export const NavBar = () => {
     <nav className="fixed top-0 left-0 right-0 z-40 bg-nude-50/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="/" className="text-nude-300 text-xl tracking-wider">
-            Délice
+          {/* ✅ Logo to the Left of Text */}
+          <a href="/" className="flex items-center space-x-3 text-nude-300 text-xl tracking-wider">
+            <img src={logoPath} alt="Logo" className="w-20 h-20 object-contain" /> 
+            <span>Cookies By Damdoom</span>
           </a>
+
           <div className="flex items-center space-x-8">
             <a href="#products" className="text-nude-300 hover:text-nude-200 transition-colors">
               Products

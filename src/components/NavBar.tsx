@@ -1,15 +1,16 @@
 
 import { ShoppingBag } from "lucide-react";
-import Logo from "../1b704c3d-0db6-496c-a4ca-551a39374261.png";
 import { useCart } from "@/contexts/CartContext";
+import Logo from "../Damdoom.png";
 import { 
   Drawer,
   DrawerContent,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Cart } from "@/contexts/Cart";
+import { Cart } from "./Cart";
+const { items } = useCart();
+
 export const NavBar = () => {
-  const { items } = useCart();
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-nude-50/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">

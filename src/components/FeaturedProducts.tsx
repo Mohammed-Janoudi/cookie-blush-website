@@ -20,7 +20,7 @@ const products = [
   {
     id: 3,
     name: "Matcha Green Tea",
-    description: "Japanese-inspired cookies with authentic matcha",
+    description: "Cookies with authentic matcha",
     price: "5.50",
     image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&q=80",
   },

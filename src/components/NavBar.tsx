@@ -11,17 +11,16 @@ import { Cart } from "@/contexts/Cart";
 
 export const NavBar = () => {
   const { items } = useCart();
+  
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-nude-50/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo and Brand Name */}
           <a href="/" className="flex items-center space-x-2 text-nude-300 text-xl tracking-wider">
             <img src={Logo} alt="Logo" className="w-20 h-20" /> 
             <span>Cookies By Damdoom</span>
           </a>
 
-          {/* Navigation Links */}
           <div className="flex items-center space-x-8">
             <a href="#products" className="text-nude-300 hover:text-nude-200 transition-colors">
               Products

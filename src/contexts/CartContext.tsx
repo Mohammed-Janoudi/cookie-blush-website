@@ -1,10 +1,13 @@
+
 import React, { createContext, useContext, useState } from 'react';
+
 export type CartItem = {
   id: number;
   name: string;
   price: string;
   quantity: number;
 };
+
 type CartContextType = {
   items: CartItem[];
   addToCart: (product: Omit<CartItem, 'quantity'>) => void;
@@ -12,9 +15,12 @@ type CartContextType = {
   updateQuantity: (id: number, quantity: number) => void;
   cartTotal: string;
 };
+
 const CartContext = createContext<CartContextType | undefined>(undefined);
+
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>([]);
+
   const addToCart = (product: Omit<CartItem, 'quantity'>) => {
     setItems((currentItems) => {
       const existingItem = currentItems.find((item) => item.id === product.id);
@@ -28,9 +34,11 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       return [...currentItems, { ...product, quantity: 1 }];
     });
   };
+
   const removeFromCart = (id: number) => {
     setItems((currentItems) => currentItems.filter((item) => item.id !== id));
   };
+
   const updateQuantity = (id: number, quantity: number) => {
     setItems((currentItems) =>
       currentItems.map((item) =>
@@ -38,12 +46,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       )
     );
   };
+
   const cartTotal = items
     .reduce((total, item) => {
       const price = parseFloat(item.price.replace('$', ''));
       return total + price * item.quantity;
     }, 0)
     .toFixed(2);
+
   return (
     <CartContext.Provider
       value={{ items, addToCart, removeFromCart, updateQuantity, cartTotal }}
@@ -52,6 +62,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     </CartContext.Provider>
   );
 };
+
 export const useCart = () => {
   const context = useContext(CartContext);
   if (context === undefined) {

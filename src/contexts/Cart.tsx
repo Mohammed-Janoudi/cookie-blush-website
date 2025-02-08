@@ -1,7 +1,10 @@
+
 import { useCart } from '@/contexts/CartContext';
 import { X } from 'lucide-react';
+
 export const Cart = () => {
   const { items, removeFromCart, updateQuantity, cartTotal } = useCart();
+
   return (
     <div className="p-4">
       <h2 className="text-lg font-medium text-nude-300 mb-4">Shopping Cart</h2>

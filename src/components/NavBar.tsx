@@ -16,14 +16,15 @@ export const NavBar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-nude-50/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 flex-wrap">
           {/* ✅ Logo to the Left of Text */}
-          <a href="/" className="flex items-center space-x-3 text-nude-300 text-xl tracking-wider">
-            <img src={logoPath} alt="Logo" className="w-20 h-20 object-contain" /> 
+          <a href="/" className="flex items-center space-x-3 text-nude-300 text-lg md:text-xl tracking-wider">
+            <img src={logoPath} alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" /> 
             <span>Cookies By Damdoom</span>
           </a>
 
-          <div className="flex items-center space-x-8">
+          {/* ✅ Mobile-friendly Navigation Links */}
+          <div className="hidden md:flex items-center space-x-8">
             <a href="#products" className="text-nude-300 hover:text-nude-200 transition-colors">
               Products
             </a>
@@ -33,24 +34,48 @@ export const NavBar = () => {
             <a href="#contact" className="text-nude-300 hover:text-nude-200 transition-colors">
               Contact
             </a>
+          </div>
+
+          {/* ✅ Mobile Drawer for Menu */}
+          <div className="md:hidden">
             <Drawer>
               <DrawerTrigger asChild>
-                <button className="text-nude-300 hover:text-nude-200 transition-colors relative">
-                  <ShoppingBag className="w-5 h-5" />
-                  {items.length > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-nude-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                      {items.length}
-                    </span>
-                  )}
+                <button className="text-nude-300 hover:text-nude-200 transition-colors">
+                  ☰ {/* Hamburger Icon */}
                 </button>
               </DrawerTrigger>
-              <DrawerContent>
-                <div className="max-w-md mx-auto">
-                  <Cart />
-                </div>
+              <DrawerContent className="p-4 space-y-4">
+                <a href="#products" className="block text-nude-300 hover:text-nude-200 transition-colors">
+                  Products
+                </a>
+                <a href="#about" className="block text-nude-300 hover:text-nude-200 transition-colors">
+                  About
+                </a>
+                <a href="#contact" className="block text-nude-300 hover:text-nude-200 transition-colors">
+                  Contact
+                </a>
               </DrawerContent>
             </Drawer>
           </div>
+
+          {/* ✅ Shopping Cart */}
+          <Drawer>
+            <DrawerTrigger asChild>
+              <button className="text-nude-300 hover:text-nude-200 transition-colors relative">
+                <ShoppingBag className="w-5 h-5" />
+                {items.length > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-nude-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                    {items.length}
+                  </span>
+                )}
+              </button>
+            </DrawerTrigger>
+            <DrawerContent>
+              <div className="max-w-md mx-auto">
+                <Cart />
+              </div>
+            </DrawerContent>
+          </Drawer>
         </div>
       </div>
     </nav>

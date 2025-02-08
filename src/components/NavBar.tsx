@@ -1,7 +1,16 @@
 
 import { ShoppingBag } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { 
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Cart } from "./Cart";
 
 export const NavBar = () => {
+  const { items } = useCart();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-nude-50/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">
@@ -19,9 +28,23 @@ export const NavBar = () => {
             <a href="#contact" className="text-nude-300 hover:text-nude-200 transition-colors">
               Contact
             </a>
-            <button className="text-nude-300 hover:text-nude-200 transition-colors">
-              <ShoppingBag className="w-5 h-5" />
-            </button>
+            <Drawer>
+              <DrawerTrigger asChild>
+                <button className="text-nude-300 hover:text-nude-200 transition-colors relative">
+                  <ShoppingBag className="w-5 h-5" />
+                  {items.length > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-nude-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                      {items.length}
+                    </span>
+                  )}
+                </button>
+              </DrawerTrigger>
+              <DrawerContent>
+                <div className="max-w-md mx-auto">
+                  <Cart />
+                </div>
+              </DrawerContent>
+            </Drawer>
           </div>
         </div>
       </div>

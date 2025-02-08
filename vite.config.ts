@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/cookie-blush-website/" : "/", // 🔥 Fix for GitHub Pages
+  base: "/cookie-blush-website/", // 🔥 Set to your GitHub repo name
   server: {
     host: "::",
     port: 8080,
@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: "dist", // ✅ Ensure correct build output
-    assetsDir: "assets", // ✅ Keeps assets organized
+    outDir: "dist", // Ensure files go to dist/
+    assetsDir: "assets", // Keep assets organized
   },
 }));

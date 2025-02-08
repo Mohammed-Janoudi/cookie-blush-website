@@ -1,32 +1,47 @@
 
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
 const products = [
   {
     id: 1,
     name: "Classic Chocolate Chip",
     description: "Rich, buttery, and filled with premium chocolate",
-    price: "$4.50",
+    price: "4.50",
+    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80",
   },
   {
     id: 2,
     name: "Lavender Shortbread",
     description: "Delicate butter cookies with a hint of lavender",
-    price: "$5.00",
+    price: "5.00",
+    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80",
   },
   {
     id: 3,
     name: "Matcha Green Tea",
-    description: "Japanese-inspired cookies with authentic matcha",
-    price: "$5.50",
+    description: "Cookies with authentic matcha",
+    price: "5.50",
+    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&q=80",
   },
   {
     id: 4,
     name: "Salted Caramel",
     description: "Sweet and salty perfection in every bite",
-    price: "$5.00",
+    price: "5.00",
+    image: "https://images.unsplash.com/photo-1618923850107-d1a234d7a079?auto=format&fit=crop&q=80",
   },
 ];
 
 export const FeaturedProducts = () => {
+  const { addToCart } = useCart();
+  const handleAddToCart = (product: typeof products[0]) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: `$${product.price}`,
+    });
+    toast.success(`Added ${product.name} to cart`);
+  };
   return (
     <section id="products" className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -53,8 +68,13 @@ export const FeaturedProducts = () => {
               </div>
               <h3 className="text-lg font-medium text-nude-300">{product.name}</h3>
               <p className="mt-1 text-nude-300/70 text-sm">{product.description}</p>
-              <p className="mt-2 text-nude-300">{product.price}</p>
-              <button className="mt-4 w-full px-4 py-2 bg-nude-200 text-white rounded-full hover:bg-nude-200/90 transition-colors">
+              <p className="mt-2 text-nude-300">${product.price}</p>
+              <button
+                onClick={() => handleAddToCart(product)}
+                className="mt-4 w-full px-4 py-2 bg-nude-200 text-white rounded-full hover:bg-nude-200/90 transition-colors"
+              >
+              
+              
                 Add to Cart
               </button>
             </div>

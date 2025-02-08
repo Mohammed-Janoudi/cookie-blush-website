@@ -8,7 +8,7 @@ import {
 import { Cart } from "./Cart";
 
 // ✅ Use the correct public path
-const logoPath = "/1b704c3d-0db6-496c-a4ca-551a39374261.png";
+const logoPath = `${import.meta.env.BASE_URL}1b704c3d-0db6-496c-a4ca-551a39374261.png`;
 
 export const NavBar = () => {
   const { items } = useCart();

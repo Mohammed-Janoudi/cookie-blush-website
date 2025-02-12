@@ -34,11 +34,7 @@ const products = [
   {
     id: 5,
     name: "Brookies",
-<<<<<<< HEAD
-    description: "The perfect blend of brownies and cookies",
-=======
     description: "The perfect blend of brownies and cookies in one treat",
->>>>>>> e62ebe51ca6a1086b792fce242e32729dd9f3f35
     price: "5.50",
     image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&q=80",
   },
@@ -59,17 +55,11 @@ const products = [
   {
     id: 8,
     name: "Tiramisu",
-<<<<<<< HEAD
-    description: "Classic Italian dessert with coffee-soaked layers ",
-=======
     description: "Classic Italian dessert with coffee-soaked layers and mascarpone cream",
->>>>>>> e62ebe51ca6a1086b792fce242e32729dd9f3f35
     price: "6.50",
     image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&q=80",
   },
 ];
-
-
 
 export const FeaturedProducts = () => {
   const { addToCart } = useCart();

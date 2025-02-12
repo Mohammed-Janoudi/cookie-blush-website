@@ -6,6 +6,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Cart } from "./Cart";
+import { Link } from "react-router-dom";
 
 // ✅ Use the correct public path
 const logoPath = "/1b704c3d-0db6-496c-a4ca-551a39374261.png";
@@ -18,22 +19,22 @@ export const NavBar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 flex-wrap">
           {/* ✅ Logo to the Left of Text */}
-          <a href="/" className="flex items-center space-x-3 text-nude-300 text-lg md:text-xl tracking-wider">
+          <Link to="/" className="flex items-center space-x-3 text-nude-300 text-lg md:text-xl tracking-wider">
             <img src={logoPath} alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" /> 
             <span>Cookies By Damdoom</span>
-          </a>
+          </Link>
 
           {/* ✅ Mobile-friendly Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#products" className="text-nude-300 hover:text-nude-200 transition-colors">
+            <Link to="/" className="text-nude-300 hover:text-nude-200 transition-colors">
               Products
-            </a>
-            <a href="#about" className="text-nude-300 hover:text-nude-200 transition-colors">
+            </Link>
+            <Link to="/about" className="text-nude-300 hover:text-nude-200 transition-colors">
               About
-            </a>
-            <a href="#contact" className="text-nude-300 hover:text-nude-200 transition-colors">
+            </Link>
+            <Link to="/contact" className="text-nude-300 hover:text-nude-200 transition-colors">
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* ✅ Mobile Drawer for Menu */}
@@ -45,15 +46,15 @@ export const NavBar = () => {
                 </button>
               </DrawerTrigger>
               <DrawerContent className="p-4 space-y-4">
-                <a href="#products" className="block text-nude-300 hover:text-nude-200 transition-colors">
+                <Link to="/" className="block text-nude-300 hover:text-nude-200 transition-colors">
                   Products
-                </a>
-                <a href="#about" className="block text-nude-300 hover:text-nude-200 transition-colors">
+                </Link>
+                <Link to="/about" className="block text-nude-300 hover:text-nude-200 transition-colors">
                   About
-                </a>
-                <a href="#contact" className="block text-nude-300 hover:text-nude-200 transition-colors">
+                </Link>
+                <Link to="/contact" className="block text-nude-300 hover:text-nude-200 transition-colors">
                   Contact
-                </a>
+                </Link>
               </DrawerContent>
             </Drawer>
           </div>

@@ -52,6 +52,13 @@ const products = [
     price: "6.50",
     image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&q=80",
   },
+  {
+    id: 8,
+    name: "Tiramisu",
+    description: "Classic Italian dessert with coffee-soaked layers and mascarpone cream",
+    price: "6.50",
+    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&q=80",
+  },
 ];
 
 export const FeaturedProducts = () => {

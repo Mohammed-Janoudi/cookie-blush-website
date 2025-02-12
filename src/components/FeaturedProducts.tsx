@@ -31,37 +31,7 @@ const products = [
     price: "5.00",
     image: "/julissa-capdevilla-tDoHiqXl9b8-unsplash.jpg",
   },
-  {
-    id: 5,
-    name: "Brookies",
-    description: "The perfect blend of brownies and cookies",
-    price: "5.50",
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&q=80",
-  },
-  {
-    id: 6,
-    name: "Classic Brownies",
-    description: "Rich, fudgy brownies with a perfectly crispy top",
-    price: "5.00",
-    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80",
-  },
-  {
-    id: 7,
-    name: "Tres Leches Cake",
-    description: "Moist sponge cake soaked in three kinds of milk",
-    price: "6.50",
-    image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&q=80",
-  },
-  {
-    id: 8,
-    name: "Tiramisu",
-    description: "Classic Italian dessert with coffee-soaked layers ",
-    price: "6.50",
-    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&q=80",
-  },
 ];
-
-
 
 export const FeaturedProducts = () => {
   const { addToCart } = useCart();

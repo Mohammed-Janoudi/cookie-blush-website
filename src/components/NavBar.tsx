@@ -1,3 +1,4 @@
+
 import { ShoppingBag } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { 

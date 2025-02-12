@@ -1,3 +1,4 @@
+
 import { NavBar } from "@/components/NavBar";
 import { CartProvider } from "@/contexts/CartContext";
 import { Heart, Cookie, Star, ChefHat } from "lucide-react";
@@ -11,13 +12,13 @@ import {
 const About = () => {
   return (
     <CartProvider>
-      <main className="min-h-screen bg-nude-50">
+      <main className="min-h-screen bg-nude-50 w-full overflow-x-hidden">
         <NavBar />
-        <div className="container mx-auto px-4 pt-32 pb-16">
+        <div className="container mx-auto px-4 pt-32 pb-16 overflow-y-auto">
           <div className="max-w-4xl mx-auto">
             {/* Animated Header */}
             <div className="text-center mb-12 animate-fade-in">
-              <h1 className="text-5xl font-light text-nude-300 mb-4">About Damdoom</h1>
+              <h1 className="text-5xl md:text-5xl sm:text-4xl font-light text-nude-300 mb-4">About Damdoom</h1>
               <p className="text-nude-200 text-lg">Crafting Sweet Memories, One Cookie at a Time</p>
             </div>
 
@@ -123,6 +124,5 @@ const About = () => {
     </CartProvider>
   );
 };
-
 
 export default About;
